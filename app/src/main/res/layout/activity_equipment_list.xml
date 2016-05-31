@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/equipment_list_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.youngmo.chun.mycampingitem.activity.EquipmentListActivity"
+    android:background="@color/White">
+
+    <!-- AdMob -->
+    <include
+        android:id="@+id/admob_layout"
+        layout="@layout/layout_admob" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/admob_layout">
+
+        <include layout="@layout/layout_top_navigator_bar" />
+
+        <LinearLayout
+            android:id="@+id/equipment_list_category_layout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_40"
+            android:layout_below="@+id/top_navigator_bar_layout"
+            android:background="@drawable/sub_bar_background"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/equipment_list_category_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dp_34"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/dp_6"
+                android:layout_marginRight="@dimen/dp_6"
+                android:background="@drawable/selectbox"
+                android:ellipsize="end"
+                android:gravity="center_vertical"
+                android:maxLines="1"
+                android:paddingLeft="@dimen/dp_5"
+                android:paddingRight="@dimen/dp_5"
+                android:text="@string/category_total"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+
+        <ListView
+            android:id="@+id/equipment_list_list_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/equipment_list_category_layout"
+            android:layout_marginTop="@dimen/dp_3"
+            android:divider="@null"
+            android:dividerHeight="@dimen/dp_0" >
+
+        </ListView>
+
+        <com.youngmo.chun.mycampingitem.view.MenuNavigatorView
+            android:id="@+id/equipment_list_menu_navigator_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </RelativeLayout>
+</RelativeLayout>

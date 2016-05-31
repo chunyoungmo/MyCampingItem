@@ -1,0 +1,101 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/check_list_group_layout"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_180"
+    android:background="@drawable/bg_check_list_group"
+    >
+
+    <!-- 그룹 테마 등록 Layout -->
+    <RelativeLayout
+        android:id="@+id/check_list_group_row_theme_add_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_180"
+        android:gravity="center"
+        android:visibility="gone"
+        android:background="@drawable/navigation_bar_background"
+        >
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/add_check_list_group_theme"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="@dimen/dp_4"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_check_list_add"
+                android:layout_gravity="center"/>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <!-- 그룹 테마 Layout -->
+    <RelativeLayout
+        android:id="@+id/check_list_group_row_theme_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_180"
+        android:visibility="visible"
+        >
+        <LinearLayout
+            android:id="@+id/check_list_group_row_delete_layout"
+            android:layout_width="@dimen/dp_36"
+            android:layout_height="@dimen/dp_36"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/circle_red"
+            >
+
+            <ImageButton
+                android:id="@+id/check_list_group_row_delete"
+                android:layout_width="@dimen/dp_36"
+                android:layout_height="@dimen/dp_36"
+                android:background="@drawable/btn_delete_large"
+                android:focusable="false"
+                android:focusableInTouchMode="false" />
+        </LinearLayout>
+        <ImageView
+            android:id="@+id/check_list_group_row_theme_image"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_180"
+            android:background="@color/Black"
+            android:scaleType="centerInside"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="vertical"
+            android:background="#7f000000"
+            >
+            <TextView
+                android:id="@+id/check_list_group_row_theme_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/dp_4"
+                android:paddingRight="@dimen/dp_4"
+                android:paddingTop="@dimen/dp_2"
+                android:paddingBottom="@dimen/dp_2"
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:textColor="@color/White"
+                android:textSize="15sp"
+                />
+            <TextView
+                android:id="@+id/check_list_group_row_field_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/dp_4"
+                android:paddingRight="@dimen/dp_4"
+                android:paddingBottom="@dimen/dp_2"
+                android:maxLines="1"
+                android:textColor="@color/White"
+                android:textSize="13sp"
+                />
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>

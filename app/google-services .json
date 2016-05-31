@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "812556070354",
+    "firebase_url": "https://admob-app-id-8616165636.firebaseio.com",
+    "project_id": "admob-app-id-8616165636",
+    "storage_bucket": "admob-app-id-8616165636.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:812556070354:android:852c895ae994f2d0",
+        "android_client_info": {
+          "package_name": "com.youngmo.chun.mycampingitem"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "812556070354-ba4blm93947iurradhh4fp0b5lbo691d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCtZhmjxqDJMst8JWP8he1Y3vSiDaASfLo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

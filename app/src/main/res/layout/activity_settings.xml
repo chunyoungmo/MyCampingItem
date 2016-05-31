@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.youngmo.chun.mycampingitem.activity.SettingsActivity"
+    android:background="@color/White">
+
+    <!-- AdMob -->
+    <include
+        android:id="@+id/admob_layout"
+        layout="@layout/layout_admob" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/admob_layout">
+
+        <include layout="@layout/layout_top_navigator_bar" />
+
+        <!-- 출정 전 알림 시간 셋팅 -->
+        <LinearLayout
+            android:id="@+id/settings_field_alarm_time_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/top_navigator_bar_layout"
+            android:layout_marginTop="@dimen/dp_15"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_marginRight="@dimen/dp_10"
+                android:text="@string/field_alarm_time_set_guide"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/settings_field_alarm_time_text_view"
+                android:layout_width="@dimen/dp_80"
+                android:layout_height="@dimen/dp_33"
+                android:layout_marginTop="@dimen/dp_4"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_marginRight="@dimen/dp_10"
+                android:background="@drawable/selectbox"
+                android:ellipsize="end"
+                android:gravity="center_vertical"
+                android:maxLines="1"
+                android:paddingLeft="@dimen/dp_4"
+                android:textSize="15sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_1"
+                android:layout_marginTop="@dimen/dp_15"
+                android:background="#bdbdbd" />
+        </LinearLayout>
+
+        <!-- 앱 버전 정보 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/settings_field_alarm_time_layout"
+            android:layout_marginTop="@dimen/dp_10"
+            android:orientation="vertical"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:text="@string/app_version"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/settings_app_version_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_1"
+                android:layout_marginTop="@dimen/dp_15"
+                android:background="#bdbdbd" />
+        </LinearLayout>
+
+    </RelativeLayout>
+</RelativeLayout>

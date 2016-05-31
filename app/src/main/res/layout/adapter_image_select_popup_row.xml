@@ -1,0 +1,12 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_165"
+    android:background="@color/White"
+    >
+
+    <ImageView
+        android:id="@+id/image_select_popup_row_image"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_165"
+        android:scaleType="fitXY" />
+</RelativeLayout>

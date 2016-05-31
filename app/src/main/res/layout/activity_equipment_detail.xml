@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.youngmo.chun.mycampingitem.activity.EquipmentDetailActivity"
+    android:background="@color/White">
+
+    <!-- AdMob -->
+    <include
+        android:id="@+id/admob_layout"
+        layout="@layout/layout_admob" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/admob_layout">
+
+        <include layout="@layout/layout_top_navigator_bar" />
+
+        <ScrollView
+            android:id="@+id/equipment_detail_contents_layer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/top_navigator_bar_layout">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_marginRight="@dimen/dp_10"
+                android:orientation="vertical">
+
+                <!-- 카테고리,제품명 -->
+                <TextView
+                    android:id="@+id/equipment_detail_category_and_product_name_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:textSize="17sp"
+                    android:textColor="#666666"
+                    android:textStyle="bold" />
+
+                <!-- 제조 회사-->
+                <LinearLayout
+                    android:id="@+id/equipment_detail_product_maker_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_6"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="@dimen/dp_4"
+                        android:layout_height="@dimen/dp_4"
+                        android:background="@drawable/ic_point"
+                        android:layout_gravity="center_vertical"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/product_maker"
+                        android:textSize="15sp"
+                        android:layout_marginLeft="@dimen/dp_4"
+                        android:textColor="#666666"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/colon"
+                        android:textSize="15sp"
+                        android:layout_marginLeft="@dimen/dp_4"
+                        android:textColor="#666666"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/equipment_detail_product_maker_text_view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dp_4"
+                        android:textColor="#666666"
+                        android:textSize="15sp" />
+                </LinearLayout>
+
+                <!-- 구입 날짜 -->
+                <LinearLayout
+                    android:id="@+id/equipment_detail_purchase_date_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_6"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="@dimen/dp_4"
+                        android:layout_height="@dimen/dp_4"
+                        android:background="@drawable/ic_point"
+                        android:layout_gravity="center_vertical"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/purchase_date"
+                        android:textSize="15sp"
+                        android:layout_marginLeft="@dimen/dp_4"
+                        android:textColor="#666666"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/colon"
+                        android:textSize="15sp"
+                        android:layout_marginLeft="@dimen/dp_4"
+                        android:textColor="#666666"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/equipment_detail_purchase_date_text_view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dp_4"
+                        android:textColor="#666666"
+                        android:textSize="15sp" />
+                </LinearLayout>
+
+                <!-- 구입 가격 -->
+                <LinearLayout
+                    android:id="@+id/equipment_detail_purchase_price_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_6"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="@dimen/dp_4"
+                        android:layout_height="@dimen/dp_4"
+                        android:background="@drawable/ic_point"
+                        android:layout_gravity="center_vertical"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/purchase_price"
+                        android:textSize="15sp"
+                        android:layout_marginLeft="@dimen/dp_4"
+                        android:textColor="#666666"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/colon"
+                        android:textSize="15sp"
+                        android:layout_marginLeft="@dimen/dp_4"
+                        android:textColor="#666666"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/equipment_detail_purchase_price_text_view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dp_4"
+                        android:textColor="#666666"
+                        android:textSize="15sp" />
+                </LinearLayout>
+
+                <!-- 구입 수량 -->
+                <LinearLayout
+                    android:id="@+id/equipment_detail_purchase_amount_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_6"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="@dimen/dp_4"
+                        android:layout_height="@dimen/dp_4"
+                        android:background="@drawable/ic_point"
+                        android:layout_gravity="center_vertical"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/purchase_amount"
+                        android:textSize="15sp"
+                        android:layout_marginLeft="@dimen/dp_4"
+                        android:textColor="#666666"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/colon"
+                        android:textSize="15sp"
+                        android:layout_marginLeft="@dimen/dp_4"
+                        android:textColor="#666666"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/equipment_detail_purchase_amount_text_view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dp_4"
+                        android:textColor="#666666"
+                        android:textSize="15sp" />
+                </LinearLayout>
+
+                <!-- 메모 -->
+                <LinearLayout
+                    android:id="@+id/equipment_detail_comment_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_6"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="@dimen/dp_4"
+                            android:layout_height="@dimen/dp_4"
+                            android:background="@drawable/ic_point"
+                            android:layout_gravity="center_vertical"
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/comment"
+                            android:textSize="15sp"
+                            android:layout_marginLeft="@dimen/dp_4"
+                            android:textColor="#666666"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/equipment_detail_comment_text_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dp_5"
+                        android:layout_marginRight="@dimen/dp_5"
+                        android:autoLink="all"
+                        android:linksClickable="true"
+                        android:background="@drawable/border_popup_3"
+                        android:textSize="15sp"
+                        android:textColor="#666666"
+                        />
+                </LinearLayout>
+
+                <!-- 이미지 1 -->
+                <RelativeLayout
+                    android:id="@+id/equipment_detail_picture_1_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dp_6"
+                    android:layout_marginTop="@dimen/dp_10">
+
+                    <com.youngmo.chun.mycampingitem.widget.HeightResizableImageView
+                        android:id="@+id/equipment_detail_picture_1_image_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitCenter" />
+
+                    <ImageView
+                        android:layout_width="@dimen/dp_19"
+                        android:layout_height="@dimen/dp_19"
+                        android:layout_alignBottom="@id/equipment_detail_picture_1_image_view"
+                        android:layout_alignRight="@id/equipment_detail_picture_1_image_view"
+                        android:background="@drawable/btn_expand"
+                        android:visibility="gone" />
+                </RelativeLayout>
+
+                <!-- 이미지 2 -->
+                <RelativeLayout
+                    android:id="@+id/equipment_detail_picture_2_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dp_6">
+
+                    <com.youngmo.chun.mycampingitem.widget.HeightResizableImageView
+                        android:id="@+id/equipment_detail_picture_2_image_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitCenter" />
+
+                    <ImageView
+                        android:layout_width="@dimen/dp_19"
+                        android:layout_height="@dimen/dp_19"
+                        android:layout_alignBottom="@id/equipment_detail_picture_2_image_view"
+                        android:layout_alignRight="@id/equipment_detail_picture_2_image_view"
+                        android:background="@drawable/btn_expand"
+                        android:visibility="gone" />
+                </RelativeLayout>
+
+                <!-- 이미지 3 -->
+                <RelativeLayout
+                    android:id="@+id/equipment_detail_picture_3_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dp_6">
+
+                    <com.youngmo.chun.mycampingitem.widget.HeightResizableImageView
+                        android:id="@+id/equipment_detail_picture_3_image_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitCenter" />
+
+                    <ImageView
+                        android:layout_width="@dimen/dp_19"
+                        android:layout_height="@dimen/dp_19"
+                        android:layout_alignBottom="@id/equipment_detail_picture_3_image_view"
+                        android:layout_alignRight="@id/equipment_detail_picture_3_image_view"
+                        android:background="@drawable/btn_expand"
+                        android:visibility="gone" />
+                </RelativeLayout>
+
+            </LinearLayout>
+        </ScrollView>
+    </RelativeLayout>
+</RelativeLayout>

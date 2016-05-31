@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/image_select_popup_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/DimBlack">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_30"
+        android:layout_marginRight="@dimen/dp_30"
+        android:layout_centerInParent="true"
+        android:orientation="vertical"
+        android:background="@drawable/border_popup"
+        >
+        <LinearLayout
+            android:id="@+id/image_select_popup_title_layout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_50"
+            android:background="#cbbb82"
+            android:orientation="horizontal"
+            >
+            <TextView
+                android:id="@+id/image_select_popup_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textColor="@color/White"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/dp_4"
+                />
+
+        </LinearLayout>
+
+        <GridView
+            android:id="@+id/image_select_popup_grid_view"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_340"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginBottom="@dimen/dp_10"
+            android:paddingLeft="@dimen/dp_4"
+            android:paddingRight="@dimen/dp_4"
+            android:verticalSpacing="@dimen/dp_10"
+            android:horizontalSpacing="@dimen/dp_10"
+            android:numColumns="2"
+            android:gravity="center">
+        </GridView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/dp_10">
+            <Button
+                android:id="@+id/image_select_popup_cancel_button"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_40"
+                android:text="@string/cancel"
+                android:textSize="16sp"
+                android:background="@drawable/selector_popup_btn_background_type1"
+                android:textColor="@drawable/selector_popup_btn_textcolor_type1"
+                android:textAllCaps="false"
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+</RelativeLayout>

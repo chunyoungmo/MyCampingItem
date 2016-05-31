@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/single_select_popup_row_layout"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_40"
+    android:orientation="horizontal"
+    android:paddingLeft="@dimen/dp_4"
+    android:paddingRight="@dimen/dp_4">
+
+    <ImageView
+        android:id="@+id/single_select_popup_row_image"
+        android:layout_width="@dimen/dp_30"
+        android:layout_height="@dimen/dp_30"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/dp_4"
+        android:visibility="gone"
+         />
+    <TextView
+        android:id="@+id/single_select_popup_row_title_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dp_40"
+        android:layout_toRightOf="@id/single_select_popup_row_image"
+        android:textSize="15sp"
+        android:textColor="#373737"
+        android:gravity="center_vertical"
+        android:layout_centerVertical="true"
+        />
+    <Button
+        android:id="@+id/single_select_popup_row_radio_button"
+        android:layout_width="@dimen/dp_20"
+        android:layout_height="@dimen/dp_20"
+        android:background="@drawable/selector_btn_radio"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:visibility="gone"
+        />
+</RelativeLayout>

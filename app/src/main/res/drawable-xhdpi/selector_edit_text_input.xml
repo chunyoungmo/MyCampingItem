@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:state_focused="true"
+        android:state_selected="false"
+        >
+        <shape>
+            <solid
+                android:color="@color/White" />
+            <stroke android:width="@dimen/dp_1"
+                android:color="#cbbb82" />
+            <padding android:left="@dimen/dp_3" android:top="@dimen/dp_2" android:right="@dimen/dp_3"
+                android:bottom="@dimen/dp_2" />
+        </shape>
+    </item>
+    <item
+        android:state_focused="false"
+        android:state_selected="false"
+        >
+        <shape>
+            <solid
+                android:color="@color/White" />
+            <stroke android:width="@dimen/dp_1"
+                android:color="@color/Gray" />
+            <padding android:left="@dimen/dp_3" android:top="@dimen/dp_2" android:right="@dimen/dp_3"
+                android:bottom="@dimen/dp_2" />
+        </shape>
+    </item>
+</selector>
+<!--<selector xmlns:android="http://schemas.android.com/apk/res/android">-->
+    <!--<item-->
+        <!--android:state_focused="true"-->
+        <!--android:state_selected="false"-->
+        <!-->-->
+        <!--<shape>-->
+            <!--<solid-->
+                <!--android:color="@color/White" />-->
+            <!--<stroke android:width="@dimen/dp_1"-->
+                <!--android:color="#cbbb82" />-->
+            <!--<padding android:left="@dimen/dp_3" android:top="@dimen/dp_2" android:right="@dimen/dp_3"-->
+                <!--android:bottom="@dimen/dp_2" />-->
+            <!--<corners-->
+                <!--android:radius="@dimen/dp_2"/>-->
+        <!--</shape>-->
+    <!--</item>-->
+    <!--<item-->
+        <!--android:state_focused="false"-->
+        <!--android:state_selected="false"-->
+        <!-->-->
+        <!--<shape>-->
+            <!--<solid-->
+                <!--android:color="@color/White" />-->
+            <!--<stroke android:width="@dimen/dp_1"-->
+                <!--android:color="@color/Gray" />-->
+            <!--<padding android:left="@dimen/dp_3" android:top="@dimen/dp_2" android:right="@dimen/dp_3"-->
+                <!--android:bottom="@dimen/dp_2" />-->
+            <!--<corners-->
+                <!--android:radius="@dimen/dp_2"/>-->
+        <!--</shape>-->
+    <!--</item>-->
+<!--</selector>-->

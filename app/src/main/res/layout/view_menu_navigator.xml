@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:id="@+id/menu_navigator_layout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/menu_navigator_main_button"
+        android:layout_width="@dimen/dp_48"
+        android:layout_height="@dimen/dp_48"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="@dimen/dp_10"
+        android:layout_marginBottom="@dimen/dp_10"
+        android:background="@drawable/ic_navi_menu"
+        />
+
+    <RelativeLayout
+        android:id="@+id/menu_navigator_sub_common_menu_layout"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/dp_10"
+        android:layout_marginBottom="@dimen/dp_20"
+        android:layout_above="@+id/menu_navigator_main_button">
+
+        <Button
+            android:id="@+id/menu_navigator_sub_common_menu_home"
+            android:layout_width="@dimen/dp_48"
+            android:layout_height="@dimen/dp_48"
+            android:layout_marginBottom="@dimen/dp_10"
+            android:background="@drawable/ic_navi_menu_home"
+            />
+        <Button
+            android:id="@+id/menu_navigator_sub_common_menu_setting"
+            android:layout_width="@dimen/dp_48"
+            android:layout_height="@dimen/dp_48"
+            android:layout_below="@+id/menu_navigator_sub_common_menu_home"
+            android:background="@drawable/ic_navi_menu_setting"
+            />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/menu_navigator_sub_menu_layout"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@+id/menu_navigator_main_button"
+        android:layout_marginRight="@dimen/dp_20"
+        android:layout_marginBottom="@dimen/dp_10"
+        >
+        <Button
+            android:id="@+id/menu_navigator_sub_menu3"
+            android:layout_width="@dimen/dp_48"
+            android:layout_height="@dimen/dp_48"
+            android:background="@drawable/button_circle_sub_menu_3"
+            android:textColor="@color/White"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            />
+
+        <Button
+            android:id="@+id/menu_navigator_sub_menu2"
+            android:layout_width="@dimen/dp_48"
+            android:layout_height="@dimen/dp_48"
+            android:layout_toRightOf="@+id/menu_navigator_sub_menu3"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:background="@drawable/button_circle_sub_menu_2"
+            android:textColor="@color/White"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            />
+
+        <Button
+            android:id="@+id/menu_navigator_sub_menu1"
+            android:layout_width="@dimen/dp_48"
+            android:layout_height="@dimen/dp_48"
+            android:layout_toRightOf="@+id/menu_navigator_sub_menu2"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:background="@drawable/button_circle_sub_menu_1"
+            android:textColor="@color/White"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            />
+    </RelativeLayout>
+</RelativeLayout>

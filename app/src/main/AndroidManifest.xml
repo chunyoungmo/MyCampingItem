@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.youngmo.chun.mycampingitem">
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:name=".MainApplication"
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_launch_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        >
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <activity android:name=".activity.SplashActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activity.MainActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".activity.EquipmentListActivity" android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activity.EquipmentRegisterActivity"
+            android:windowSoftInputMode="stateHidden"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".activity.EquipmentDetailActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".activity.SettingsActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".activity.CheckListManagementActivity" android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activity.CheckListGroupRegisterActivity"
+            android:windowSoftInputMode="stateHidden|adjustNothing"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name=".activity.AlarmNotiActivity"
+            android:excludeFromRecents="true"
+            android:launchMode="singleInstance"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activity.SchemeActivity"
+            android:launchMode="singleTop"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:screenOrientation="portrait">
+        </activity>
+        <receiver
+            android:name=".receiver.FieldAlarmReceiver"
+            android:enabled="true"
+            android:exported="true" />
+        <receiver
+            android:name=".receiver.BootReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+
+        <receiver android:name=".receiver.AlarmNotificationEventReceiver" >
+            <intent-filter>
+                <action android:name="com.youngmo.chun.mycampingitem.notification_cancel" />
+                <action android:name="com.youngmo.chun.mycampingitem.notification_click" />
+            </intent-filter>
+        </receiver>
+
+    </application>
+
+</manifest>

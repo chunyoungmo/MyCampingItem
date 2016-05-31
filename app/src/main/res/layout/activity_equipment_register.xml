@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/equipment_register_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/White"
+    tools:context="com.youngmo.chun.mycampingitem.activity.EquipmentRegisterActivity">
+
+    <!-- AdMob -->
+    <include
+        android:id="@+id/admob_layout"
+        layout="@layout/layout_admob" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/admob_layout">
+
+        <include layout="@layout/layout_top_navigator_bar" />
+
+        <ScrollView
+            android:id="@+id/equipment_register_input_layer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/top_navigator_bar_layout">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <!-- 이미지 등록 영역 -->
+                <LinearLayout
+                    android:id="@+id/equipment_register_picture_area_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+                    <!-- 이미지 등록 버튼 영역 -->
+
+                    <LinearLayout
+                        android:id="@+id/equipment_register_picture_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <!-- 이미지 1 -->
+
+                        <RelativeLayout
+                            android:id="@+id/equipment_register_upload_group_1"
+                            android:layout_width="@dimen/dp_0"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal">
+
+                            <ImageView
+                                android:id="@+id/equipment_register_upload_1"
+                                android:layout_width="@dimen/dp_89"
+                                android:layout_height="@dimen/dp_89"
+                                android:background="@drawable/selector_btn_camera"
+                                android:scaleType="centerCrop" />
+
+                            <ImageView
+                                android:id="@+id/equipment_register_upload_delete_1"
+                                android:layout_width="@dimen/dp_30"
+                                android:layout_height="@dimen/dp_30"
+                                android:layout_alignBottom="@id/equipment_register_upload_1"
+                                android:layout_alignRight="@id/equipment_register_upload_1"
+                                android:background="@drawable/ic_img_del"
+                                android:visibility="gone" />
+                        </RelativeLayout>
+
+                        <!-- 이미지 2 -->
+
+                        <RelativeLayout
+                            android:id="@+id/equipment_register_upload_group_2"
+                            android:layout_width="@dimen/dp_0"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal">
+
+                            <ImageView
+                                android:id="@+id/equipment_register_upload_2"
+                                android:layout_width="@dimen/dp_89"
+                                android:layout_height="@dimen/dp_89"
+                                android:background="@drawable/selector_btn_camera"
+                                android:scaleType="centerCrop" />
+
+                            <ImageView
+                                android:id="@+id/equipment_register_upload_delete_2"
+                                android:layout_width="@dimen/dp_30"
+                                android:layout_height="@dimen/dp_30"
+                                android:layout_alignBottom="@id/equipment_register_upload_2"
+                                android:layout_alignRight="@id/equipment_register_upload_2"
+                                android:background="@drawable/ic_img_del"
+                                android:visibility="gone" />
+                        </RelativeLayout>
+
+                        <!-- 이미지 3 -->
+
+                        <RelativeLayout
+                            android:id="@+id/equipment_register_upload_group_3"
+                            android:layout_width="@dimen/dp_0"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal">
+
+                            <ImageView
+                                android:id="@+id/equipment_register_upload_3"
+                                android:layout_width="@dimen/dp_89"
+                                android:layout_height="@dimen/dp_89"
+                                android:background="@drawable/selector_btn_camera"
+                                android:scaleType="centerCrop" />
+
+                            <ImageView
+                                android:id="@+id/equipment_register_upload_delete_3"
+                                android:layout_width="@dimen/dp_30"
+                                android:layout_height="@dimen/dp_30"
+                                android:layout_alignBottom="@id/equipment_register_upload_3"
+                                android:layout_alignRight="@id/equipment_register_upload_3"
+                                android:background="@drawable/ic_img_del"
+                                android:visibility="gone" />
+                        </RelativeLayout>
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/hanatalk_registration_picture_info"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/dp_10"
+                        android:layout_marginTop="@dimen/dp_10"
+                        android:paddingLeft="@dimen/dp_22"
+                        android:paddingRight="@dimen/dp_22"
+                        android:text="@string/regist_picture_info"
+                        android:textColor="#666666"
+                        android:textSize="13sp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_1"
+                        android:background="#bdbdbd" />
+                </LinearLayout>
+
+                <!-- 카테고리 영역 -->
+                <LinearLayout
+                    android:id="@+id/equipment_register_category_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="@dimen/dp_10">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/dp_30"
+                            android:layout_marginLeft="@dimen/dp_10"
+                            android:text="@string/category"
+                            android:textSize="14sp"
+                            android:textColor="#333333"
+                            />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/dp_30"
+                            android:layout_marginLeft="@dimen/dp_4"
+                            android:text="*"
+                            android:textSize="14sp"
+                            android:textColor="@color/Red"/>
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/equipment_register_category_text_view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/dp_33"
+                        android:layout_marginLeft="@dimen/dp_10"
+                        android:layout_marginRight="@dimen/dp_10"
+                        android:background="@drawable/selectbox"
+                        android:ellipsize="end"
+                        android:gravity="center_vertical"
+                        android:maxLines="1"
+                        android:paddingLeft="@dimen/dp_4"
+                        android:paddingRight="@dimen/dp_4"
+                        android:textSize="14sp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_1"
+                        android:layout_marginTop="@dimen/dp_15"
+                        android:background="#bdbdbd" />
+                </LinearLayout>
+
+                <!-- 제품명 -->
+                <LinearLayout
+                    android:id="@+id/equipment_register_product_name_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:focusableInTouchMode="true"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="@dimen/dp_10">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/dp_30"
+                            android:layout_marginLeft="@dimen/dp_10"
+                            android:text="@string/product_name"
+                            android:textColor="#333333"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/dp_30"
+                            android:layout_marginLeft="@dimen/dp_4"
+                            android:text="*"
+                            android:textSize="14sp"
+                            android:textColor="@color/Red"/>
+                    </LinearLayout>
+
+                    <EditText
+                        android:id="@+id/equipment_register_product_name_edit_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_34"
+                        android:layout_marginLeft="@dimen/dp_10"
+                        android:layout_marginRight="@dimen/dp_10"
+                        android:background="@drawable/selector_edit_text_input"
+                        android:singleLine="true"
+                        android:textSize="14sp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_1"
+                        android:layout_marginTop="@dimen/dp_15"
+                        android:background="#bdbdbd" />
+
+                </LinearLayout>
+
+                <!-- 제조 회사-->
+                <LinearLayout
+                    android:id="@+id/equipment_register_product_maker_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="@dimen/dp_10">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/dp_30"
+                            android:layout_marginLeft="@dimen/dp_10"
+                            android:text="@string/product_maker"
+                            android:textColor="#333333"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/dp_30"
+                            android:layout_marginLeft="@dimen/dp_4"
+                            android:text="*"
+                            android:textSize="14sp"
+                            android:textColor="@color/Red"/>
+                    </LinearLayout>
+
+                    <EditText
+                        android:id="@+id/equipment_register_product_maker_edit_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_34"
+                        android:layout_marginLeft="@dimen/dp_10"
+                        android:layout_marginRight="@dimen/dp_10"
+                        android:background="@drawable/selector_edit_text_input"
+                        android:singleLine="true"
+                        android:textSize="14sp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_1"
+                        android:layout_marginTop="@dimen/dp_15"
+                        android:background="#bdbdbd" />
+                </LinearLayout>
+
+                <!-- 구입 날짜 -->
+                <LinearLayout
+                    android:id="@+id/equipment_register_purchase_date_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/dp_30"
+                        android:layout_marginLeft="@dimen/dp_10"
+                        android:layout_marginTop="@dimen/dp_10"
+                        android:text="@string/purchase_date"
+                        android:textSize="14sp"
+                        android:textColor="#333333" />
+
+                    <TextView
+                        android:id="@+id/equipment_register_purchase_date_text_view"
+                        android:layout_width="@dimen/dp_140"
+                        android:layout_height="@dimen/dp_33"
+                        android:layout_marginLeft="@dimen/dp_10"
+                        android:layout_marginRight="@dimen/dp_10"
+                        android:background="@drawable/selectbox"
+                        android:ellipsize="end"
+                        android:gravity="center_vertical"
+                        android:maxLines="1"
+                        android:paddingLeft="@dimen/dp_4"
+                        android:paddingRight="@dimen/dp_4"
+                        android:textSize="14sp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_1"
+                        android:layout_marginTop="@dimen/dp_15"
+                        android:background="#bdbdbd" />
+                </LinearLayout>
+                <!-- 구입 가격 -->
+                <LinearLayout
+                    android:id="@+id/equipment_register_purchase_price_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/dp_30"
+                        android:layout_marginLeft="@dimen/dp_10"
+                        android:layout_marginTop="@dimen/dp_10"
+                        android:text="@string/purchase_price"
+                        android:textSize="14sp"
+                        android:textColor="#333333" />
+
+                    <EditText
+                        android:id="@+id/equipment_register_purchase_price_edit_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_34"
+                        android:layout_marginLeft="@dimen/dp_10"
+                        android:layout_marginRight="@dimen/dp_10"
+                        android:background="@drawable/selector_edit_text_input"
+                        android:inputType="number"
+                        android:maxLength="18"
+                        android:singleLine="true"
+                        android:textSize="14sp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_1"
+                        android:layout_marginTop="@dimen/dp_15"
+                        android:background="#bdbdbd" />
+                </LinearLayout>
+
+                <!-- 구입 수량 -->
+                <LinearLayout
+                    android:id="@+id/equipment_register_purchase_amount_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/dp_30"
+                        android:layout_marginLeft="@dimen/dp_10"
+                        android:layout_marginTop="@dimen/dp_10"
+                        android:text="@string/purchase_amount"
+                        android:textSize="14sp"
+                        android:textColor="#333333" />
+
+                    <EditText
+                        android:id="@+id/equipment_register_purchase_amount_edit_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_34"
+                        android:layout_marginLeft="@dimen/dp_10"
+                        android:layout_marginRight="@dimen/dp_10"
+                        android:background="@drawable/selector_edit_text_input"
+                        android:inputType="number"
+                        android:maxLength="18"
+                        android:singleLine="true"
+                        android:textSize="14sp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_1"
+                        android:layout_marginTop="@dimen/dp_15"
+                        android:background="#bdbdbd" />
+                </LinearLayout>
+
+                <!-- 메모 -->
+                <LinearLayout
+                    android:id="@+id/equipment_register_comment_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginBottom="@dimen/dp_15" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/dp_30"
+                        android:layout_marginLeft="@dimen/dp_10"
+                        android:layout_marginTop="@dimen/dp_10"
+                        android:text="@string/comment"
+                        android:textSize="14sp"
+                        android:textColor="#333333" />
+
+                    <EditText
+                        android:id="@+id/equipment_register_comment_edit_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dp_10"
+                        android:layout_marginRight="@dimen/dp_10"
+                        android:background="@drawable/selector_edit_text_input"
+                        android:maxLength="1000"
+                        android:maxLines="5"
+                        android:minHeight="@dimen/dp_68"
+                        android:scrollbars="vertical"
+                        android:textSize="14sp" />
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.youngmo.chun.mycampingitem.activity.CheckListManagementActivity"
+    android:background="@color/White">
+
+    <!-- AdMob -->
+    <include
+        android:id="@+id/admob_layout"
+        layout="@layout/layout_admob" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/admob_layout">
+
+        <include layout="@layout/layout_top_navigator_bar" />
+
+        <GridView
+            android:id="@+id/check_list_management_grid_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/top_navigator_bar_layout"
+
+            android:layout_marginTop="@dimen/dp_10"
+            android:gravity="center"
+            android:horizontalSpacing="@dimen/dp_10"
+            android:numColumns="2"
+            android:paddingLeft="@dimen/dp_4"
+            android:paddingRight="@dimen/dp_4"
+            android:verticalSpacing="@dimen/dp_10">
+        </GridView>
+
+        <com.youngmo.chun.mycampingitem.view.MenuNavigatorView
+            android:id="@+id/check_list_management_menu_navigator_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </RelativeLayout>
+</RelativeLayout>

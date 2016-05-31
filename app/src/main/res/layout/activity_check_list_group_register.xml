@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/check_list_group_register_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.youngmo.chun.mycampingitem.activity.CheckListGroupRegisterActivity"
+    android:background="@color/White">
+
+    <!-- AdMob -->
+    <include
+        android:id="@+id/admob_layout"
+        layout="@layout/layout_admob" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/admob_layout">
+
+        <include layout="@layout/layout_top_navigator_bar" />
+
+        <!-- 그룹 테마 명 -->
+        <LinearLayout
+            android:id="@+id/check_list_group_register_theme_group_name_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/top_navigator_bar_layout"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dp_30"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_marginTop="@dimen/dp_10"
+                android:text="@string/group_theme_name"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/dp_10"
+                android:paddingRight="@dimen/dp_10">
+
+                <com.youngmo.chun.mycampingitem.widget.RoundImageView
+                    android:id="@+id/check_list_group_register_theme_image"
+                    android:layout_width="@dimen/dp_60"
+                    android:layout_height="@dimen/dp_60"
+                    android:layout_marginRight="@dimen/dp_10"
+                    android:src="@drawable/ic_theme_image_add" />
+
+                <EditText
+                    android:id="@+id/check_list_group_register_theme_group_name_edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_34"
+                    android:layout_gravity="bottom"
+                    android:background="@drawable/selector_edit_text_input"
+                    android:imeOptions="actionDone"
+                    android:singleLine="true"
+                    android:textSize="15sp" />
+                <TextView
+                    android:id="@+id/check_list_group_register_theme_group_name_text_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_34"
+                    android:layout_gravity="bottom"
+                    android:textSize="16sp"
+                    android:visibility="gone"/>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_1"
+                android:layout_marginTop="@dimen/dp_10"
+                android:background="#bdbdbd" />
+        </LinearLayout>
+
+        <!-- 출정 관련 -->
+        <LinearLayout
+            android:id="@+id/check_list_group_register_field_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/dp_10"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_10"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dp_30"
+                    android:text="@string/field_date"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/check_list_group_register_field_date_text_view"
+                    android:layout_width="@dimen/dp_100"
+                    android:layout_height="@dimen/dp_30"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:layout_marginRight="@dimen/dp_10"
+                    android:background="@drawable/selectbox"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical"
+                    android:maxLines="1"
+                    android:paddingLeft="@dimen/dp_4"
+                    android:paddingRight="@dimen/dp_4"
+                    android:textSize="15sp" />
+
+                <Button
+                    android:id="@+id/check_list_group_register_field_date_clear"
+                    android:layout_width="@dimen/dp_26"
+                    android:layout_height="@dimen/dp_26"
+                    android:layout_gravity="bottom"
+                    android:background="@drawable/btn_clear"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_marginBottom="@dimen/dp_10"
+                android:orientation="horizontal"
+                android:paddingRight="@dimen/dp_5">
+
+                <Button
+                    android:id="@+id/check_list_group_register_field_alarm_button"
+                    android:layout_width="@dimen/dp_24"
+                    android:layout_height="@dimen/dp_24"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/selector_btn_check" />
+
+                <TextView
+                    android:id="@+id/check_list_group_register_field_alarm_text_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/dp_4"
+                    android:paddingBottom="@dimen/dp_4"
+                    android:text="@string/field_alarm_guide"
+                    android:textSize="15sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- 체크 리스트 -->
+        <LinearLayout
+            android:id="@+id/check_list_group_register_check_list_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/check_list_group_register_field_layout"
+            android:layout_below="@id/check_list_group_register_theme_group_name_layout"
+            android:layout_marginTop="@dimen/dp_8"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_marginRight="@dimen/dp_10">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dp_36"
+                    android:gravity="center"
+                    android:text="@string/check_list"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:id="@+id/check_list_group_register_check_list_edit_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dp_36"
+                    android:orientation="horizontal"
+                    android:layout_alignParentRight="true">
+
+                    <Button
+                        android:id="@+id/check_list_group_register_add_button"
+                        android:layout_width="@dimen/dp_36"
+                        android:layout_height="@dimen/dp_36"
+                        android:layout_marginRight="@dimen/dp_5"
+                        android:background="@drawable/btn_checklist_add"
+                        android:textAllCaps="false" />
+                    <Button
+                        android:id="@+id/check_list_group_register_edit_button"
+                        android:layout_width="@dimen/dp_36"
+                        android:layout_height="@dimen/dp_36"
+                        android:background="@drawable/btn_checklist_delete"
+                        android:textAllCaps="false" />
+
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/check_list_group_register_list_layout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_0"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_marginRight="@dimen/dp_10"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                >
+
+                <!-- 리스트 헤더 영역 -->
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_6"
+                    android:background="@drawable/border_table_header">
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        >
+                        <TextView
+                            android:layout_width="@dimen/dp_0"
+                            android:layout_height="@dimen/dp_40"
+                            android:layout_weight="8"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:text="@string/check_list_item"
+                            android:textColor="@color/White"
+                            android:textSize="15sp" />
+                        <View
+                            android:layout_width="@dimen/dp_1"
+                            android:layout_height="match_parent"
+                            android:background="@color/Black"
+                            />
+                        <TextView
+                            android:layout_width="@dimen/dp_0"
+                            android:layout_height="@dimen/dp_40"
+                            android:layout_weight="2"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:text="@string/check_or_uncheck"
+                            android:textColor="@color/White"
+                            android:textSize="15sp" />
+                    </TableRow>
+                </TableLayout>
+
+                <!-- 리스트 -->
+                <ListView
+                    android:id="@+id/check_list_group_register_list_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:divider="@null"
+                    android:dividerHeight="@dimen/dp_0"
+                    >
+
+                </ListView>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_1"
+                android:layout_marginTop="@dimen/dp_10"
+                android:background="#bdbdbd" />
+        </LinearLayout>
+
+        <!-- 체크 리스트 편집 레이아웃 -->
+        <RelativeLayout
+            android:id="@+id/check_list_group_register_check_list_expand_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#bb000000"
+            android:visibility="gone">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginBottom="@dimen/dp_20"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_marginRight="@dimen/dp_10"
+                android:layout_marginTop="@dimen/dp_20">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:background="@drawable/border_popup_2">
+
+                    <RelativeLayout
+                        android:id="@+id/check_list_group_register_check_list_expand_contents_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="@dimen/dp_8"
+                        android:paddingRight="@dimen/dp_8"
+                        android:layout_marginTop="@dimen/dp_10">
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/check_list_group_register_check_list_expand_contents_layout"
+                        android:layout_marginBottom="@dimen/dp_5"
+                        android:layout_marginTop="@dimen/dp_5">
+
+                        <Button
+                            android:id="@+id/check_list_group_register_check_list_expand_all_delete_button"
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/dp_35"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="@dimen/dp_10"
+                            android:background="@drawable/selector_btn_common_1"
+                            android:textColor="#606060"
+                            android:text="@string/all_delete"
+                            android:textSize="15sp"
+                            android:textAllCaps="false" />
+                    </RelativeLayout>
+                </RelativeLayout>
+
+                <Button
+                    android:id="@+id/check_list_group_register_check_list_expand_close_button"
+                    android:layout_width="@dimen/dp_34"
+                    android:layout_height="@dimen/dp_34"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/btn_close"
+                    android:visibility="gone"
+                    />
+            </RelativeLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+
+</RelativeLayout>
