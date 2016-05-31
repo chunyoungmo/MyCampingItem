@@ -20,6 +20,7 @@ import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -77,6 +78,7 @@ public class CheckListGroupRegisterActivity extends BaseActivity {
     private ImageSelectPopup        mGroupDefaultImageSelectPopup = null;
     private SingleSelectPopup       mEquipDivisionSelectPopup = null;
     private InputPopup              mCheckListInputPopup = null;
+    private InputPopup              mCheckListInputModifyPopup = null;
     private MultiSelectPopup        mHoldingsEquipListSelectPopup = null;
     private CheckListGroupInfo      mCheckListGroupInfo = new CheckListGroupInfo();
     private RoundImageView          mGroupImage;
@@ -128,6 +130,10 @@ public class CheckListGroupRegisterActivity extends BaseActivity {
         else if(mCheckListInputPopup != null) {
             mActivityLayout.removeView(mCheckListInputPopup);
             mCheckListInputPopup = null;
+        }
+        else if(mCheckListInputModifyPopup != null) {
+            mActivityLayout.removeView(mCheckListInputModifyPopup);
+            mCheckListInputModifyPopup = null;
         }
         else if(mHoldingsEquipListSelectPopup != null) {
             mActivityLayout.removeView(mHoldingsEquipListSelectPopup);
@@ -276,8 +282,25 @@ public class CheckListGroupRegisterActivity extends BaseActivity {
         mCheckListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                // TODO:
-                // do nothing... 나중에 아이템 정보 팝업 형식으로 업그레이드 하는 방안 검토~
+                // 수정, 등록 모드의 경우
+                if(mMode == CheckListGroupRegMode.MODE_MODIFY || mMode == CheckListGroupRegMode.MODE_REGISTRATION) {
+                    // 직접입력한 항목은 편집 가능
+                    CheckListEquipmentInfo checkListEquipInfo = mCheckListGroupInfo.getArrCheckListEquipInfo().get(position);
+
+                    if(checkListEquipInfo.getType() == CheckListEquipmentInfo.EquipType.EQUIP_TYPE_HOLDINGS) {
+                        // TOOD: 문구 변경 필요
+                        Toast.makeText(mContext, getString(R.string.required_check_list), Toast.LENGTH_SHORT).show();
+                    }
+                    else {
+                        String equipName = checkListEquipInfo.getEquipName();
+                        showCheckListInputModifyPopup(equipName, position);
+                    }
+                }
+                else {
+                    // TODO:
+                    // do nothing... 나중에 아이템 정보 팝업 형식으로 업그레이드 하는 방안 검토~
+
+                }
             }
         });
 
@@ -705,6 +728,35 @@ public class CheckListGroupRegisterActivity extends BaseActivity {
                 }
             });
             mActivityLayout.addView(mCheckListInputPopup);
+        }
+    }
+
+    private void showCheckListInputModifyPopup(final String editStr, final int equipIndex) {
+        if(mCheckListInputModifyPopup == null) {
+            mCheckListInputModifyPopup = new InputPopup(mContext, null, editStr, new InputPopup.InputPopupListener() {
+                @Override
+                public void onInputText(String inputText) {
+                    if (mCheckListInputModifyPopup != null) {
+                        mActivityLayout.removeView(mCheckListInputModifyPopup);
+                        mCheckListInputModifyPopup = null;
+                    }
+
+                    if(Util.isValid(inputText) && !editStr.equals(inputText)) {
+                        CheckListEquipmentInfo checkListEquipmentInfo = mCheckListGroupInfo.getArrCheckListEquipInfo().get(equipIndex);
+                        checkListEquipmentInfo.setEquipName(inputText);
+                        mCheckListAdapter.notifyDataSetChanged();
+                    }
+                }
+
+                @Override
+                public void onCancel() {
+                    if (mCheckListInputModifyPopup != null) {
+                        mActivityLayout.removeView(mCheckListInputModifyPopup);
+                        mCheckListInputModifyPopup = null;
+                    }
+                }
+            });
+            mActivityLayout.addView(mCheckListInputModifyPopup);
         }
     }
 
@@ -1216,6 +1268,7 @@ public class CheckListGroupRegisterActivity extends BaseActivity {
                 viewHolder.mDeleteLayout = (ViewGroup)convertView.findViewById(R.id.check_list_row_delete_layout);
                 viewHolder.mDeleteBtn = (Button)convertView.findViewById(R.id.check_list_row_delete_button);
                 viewHolder.mItemTxtView =  (TextView)convertView.findViewById(R.id.check_list_row_item_text_view);
+                viewHolder.mDirectInputEditSymbol = (ImageView)convertView.findViewById(R.id.check_list_row_direct_input_edit_symbol);
                 convertView.setTag(viewHolder);
             }
             else {
@@ -1230,10 +1283,18 @@ public class CheckListGroupRegisterActivity extends BaseActivity {
             else
                 viewHolder.mCheckBtn.setSelected(false);
 
-            if(mMode == CheckListGroupRegMode.MODE_VIEW)
+            if(mMode == CheckListGroupRegMode.MODE_VIEW) {
                 viewHolder.mCheckBtn.setEnabled(false);
-            else
+                viewHolder.mDirectInputEditSymbol.setVisibility(View.GONE);
+            }
+            else {
                 viewHolder.mCheckBtn.setEnabled(true);
+
+                if(checkListEquipInfo.getType() == CheckListEquipmentInfo.EquipType.EQUIP_TYPE_INPUT)
+                    viewHolder.mDirectInputEditSymbol.setVisibility(View.VISIBLE);
+                else
+                    viewHolder.mDirectInputEditSymbol.setVisibility(View.GONE);
+            }
 
             if(mIsEditMode) {
                 viewHolder.mRowLayout.setBackground(ContextCompat.getDrawable(mContext, R.drawable.border_table_contents_delete));
@@ -1317,6 +1378,7 @@ public class CheckListGroupRegisterActivity extends BaseActivity {
             ViewGroup   mDeleteLayout;
             Button      mDeleteBtn;
             TextView    mItemTxtView;
+            ImageView   mDirectInputEditSymbol;
         }
     }
 }

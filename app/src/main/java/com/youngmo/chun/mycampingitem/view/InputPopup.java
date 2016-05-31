@@ -25,8 +25,9 @@ public class InputPopup extends RelativeLayout {
     private Context             mContext;
     private InputPopupListener  mListener;
     private TextView            mTitleTxtView;
-    public EditText            mInputEditTxt;
+    public EditText             mInputEditTxt;
     private String              mTitle;
+    private String              mWillEditStr;
 
 
     public InputPopup(Context context) {
@@ -51,6 +52,15 @@ public class InputPopup extends RelativeLayout {
         super(context);
         mContext = context;
         mTitle = title;
+        mListener = listener;
+        init();
+    }
+
+    public InputPopup(Context context, String title, String willEditStr, InputPopupListener listener) {
+        super(context);
+        mContext = context;
+        mTitle = title;
+        mWillEditStr = willEditStr;
         mListener = listener;
         init();
     }
@@ -135,6 +145,11 @@ public class InputPopup extends RelativeLayout {
             @Override
             public void run()
             {
+                if(Util.isValid(mWillEditStr)) {
+                    mInputEditTxt.setText(mWillEditStr);
+                    mInputEditTxt.setSelection(mWillEditStr.length());
+                }
+
                 mInputEditTxt.requestFocus();
                 Util.showSoftkeyboard(mContext, mInputEditTxt);
             }
