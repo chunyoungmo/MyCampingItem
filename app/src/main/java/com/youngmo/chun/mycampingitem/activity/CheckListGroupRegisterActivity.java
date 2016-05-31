@@ -288,8 +288,7 @@ public class CheckListGroupRegisterActivity extends BaseActivity {
                     CheckListEquipmentInfo checkListEquipInfo = mCheckListGroupInfo.getArrCheckListEquipInfo().get(position);
 
                     if(checkListEquipInfo.getType() == CheckListEquipmentInfo.EquipType.EQUIP_TYPE_HOLDINGS) {
-                        // TOOD: 문구 변경 필요
-                        Toast.makeText(mContext, getString(R.string.required_check_list), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(mContext, getString(R.string.disable_edit_checklist_item), Toast.LENGTH_SHORT).show();
                     }
                     else {
                         String equipName = checkListEquipInfo.getEquipName();

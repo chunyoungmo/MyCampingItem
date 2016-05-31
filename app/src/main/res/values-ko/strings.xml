@@ -79,6 +79,8 @@
     <string name="no">아니오</string>
     <string name="app_exit">앱을 종료합니다.</string>
 
+    <string name="disable_edit_checklist_item">보유 장비리스트에서 가져온 항목은 편집이 불가합니다.</string>
+
     <!-- AdMob ad unit ID -->
     <string name="banner_type_1_unit_id">ca-app-pub-9654869626498068/1092898837</string>
 </resources>
